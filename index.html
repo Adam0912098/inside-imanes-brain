@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f8f4fb">
+  <meta name="description" content="A fictional brain report about Imane, a very sleepy medical student.">
+  <title>Inside Imane’s Brain</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%23ebe0ff'/%3E%3Cpath d='M24 8a13 13 0 1 0 9 20A14 14 0 0 1 24 8Z' fill='%23663d94'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <svg class="svg-library" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <linearGradient id="brain-fill" x2=".7" y2="1">
+        <stop stop-color="#ffe4ef"/><stop offset=".64" stop-color="#f7b9d6"/><stop offset="1" stop-color="#e88ab7"/>
+      </linearGradient>
+      <linearGradient id="stem-fill" x2="0" y2="1">
+        <stop stop-color="#cf75ae"/><stop offset="1" stop-color="#f4adcf"/>
+      </linearGradient>
+    </defs>
+    <symbol id="moon" viewBox="0 0 24 24"><path d="M14 3a8.7 8.7 0 1 0 7 12 8.8 8.8 0 0 1-7-12Z"/><path d="M19 3v6m-3-3h6"/></symbol>
+    <symbol id="medical" viewBox="0 0 24 24"><path d="M9 4H6a2 2 0 0 0-2 2v3m0 6v3a2 2 0 0 0 2 2h3m6 0h3a2 2 0 0 0 2-2v-3m0-6V6a2 2 0 0 0-2-2h-3M8 12h8m-4-4v8"/></symbol>
+    <symbol id="food" viewBox="0 0 24 24"><path d="M5 13a7 7 0 0 1 14 0v5H5zm-2 0h18M9 18v2m6-2v2M12 6V3m0 3 3-2"/></symbol>
+    <symbol id="spark" viewBox="0 0 24 24"><path d="M12 2c0 6-4 10-10 10 6 0 10 4 10 10 0-6 4-10 10-10-6 0-10-4-10-10Z"/></symbol>
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+    <symbol id="pillow" viewBox="0 0 120 83">
+      <path d="M17 11Q12 5 6 9q-5 4 3 14Q2 43 12 62q-7 10-2 14 5 4 14-3 36 10 72-4 10 6 15 1 5-4-2-13 9-20-2-39 7-9 1-13-5-4-14 4-38-8-77 2Z" fill="#d9c4f3" stroke="#754e9c" stroke-width="2.5"/>
+      <path d="M19 24q-7 17 1 34m79-36q7 14 1 29M27 64q24 7 46 2" fill="none" stroke="#a683c7" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M38 40q6 7 12 0m20 0q6 7 12 0m-26 8q4 4 8 0" fill="none" stroke="#754e9c" stroke-width="2.5" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="brain" viewBox="0 0 400 280">
+      <g stroke-linejoin="round" stroke-linecap="round">
+        <path d="M224 207q-2 26 22 44l-23 15q-27-11-42-42Z" fill="url(#stem-fill)" stroke="#874477" stroke-width="3"/>
+        <path d="M248 177q48-19 69 5 20 28-12 46-28 17-72-1-20-11-13-29Z" fill="url(#stem-fill)" stroke="#874477" stroke-width="3"/>
+        <path d="M250 221q35 8 52-10m-51 0q30 4 49-11m-39 2q20 1 34-10" fill="none" stroke="#a4578c" stroke-width="2.5"/>
+        <path d="M72 163C52 152 43 128 54 108c-1-21 16-41 40-44 9-23 39-35 62-26 17-19 48-23 70-8 28-10 56 1 69 20 30 2 53 20 55 46 17 14 21 37 9 55 6 21-8 42-32 47-15 17-44 21-67 13-15 19-49 23-74 11-27 12-54 1-64-14-29 2-53-17-50-45Z" fill="url(#brain-fill)" stroke="#874477" stroke-width="3.4"/>
+        <path d="M58 105c14-12 34-13 48-2m-13-39c15-2 29 6 34 18m29-44c17 7 24 18 25 32m45-40c-13 10-18 27-12 40m81-20c-21 0-37 8-44 23m99 23c-18-11-36-5-45 7m54 48c-12-10-28-9-38-4m6 51c-14-8-30-7-41 0m-26 13c2-16-4-27-15-32m-59 43c-11-10-13-22-8-34m-56 20c-5-10-6-22-1-32m-49-13c7 3 15 4 22 1" fill="none" stroke="#b65d93" stroke-width="3.1"/>
+        <path d="M129 108c-4-19 16-36 36-28m27 6c13-13 32-10 43 0m42-13c19-4 32 3 38 13m-39 17c-11-11-29-9-36-1m-108 83c7 9 17 10 25 7m114-22c18 11 40 7 48-7m-118 43c11 6 27 2 32-6" fill="none" stroke="#c76d9f" stroke-width="2.8"/>
+        <path d="M100 85c18-26 55-35 83-32m51-4c17-5 36 0 46 7M73 112c-4 5-6 12-4 20" fill="none" stroke="#fff0f7" stroke-width="5" opacity=".85"/>
+        <ellipse cx="145" cy="155" rx="15" ry="8" fill="#e984b5" opacity=".65"/>
+        <ellipse cx="247" cy="155" rx="15" ry="8" fill="#e984b5" opacity=".65"/>
+        <path d="M155 137q11 13 22 0m39 0q11 13 22 0" fill="none" stroke="#613253" stroke-width="3.5"/>
+        <path d="M190 151q7 8 14 0" fill="none" stroke="#613253" stroke-width="3"/>
+      </g>
+    </symbol>
+  </svg>
+
+  <a class="skip-link" href="#brain-map">Skip to the brain map</a>
+  <header class="masthead wrap" id="top">
+    <a href="#top" class="wordmark">
+      <span class="brand-icon"><svg class="icon" aria-hidden="true"><use href="#moon"/></svg></span>
+      <span>Imane Research<br>Institute</span>
+    </a>
+    <div class="case-file"><span></span> Case IM-001</div>
+  </header>
+
+  <main class="wrap">
+    <div class="lead">
+      <figure class="specimen">
+        <figcaption><span class="record-dot"></span> <span lang="fr">Dossier confidentiel</span> <span class="specimen-id">IM–001</span></figcaption>
+        <div class="brain-stage">
+          <div class="orbit" aria-hidden="true"></div>
+          <div class="brain-model">
+            <img class="brain-render" src="assets/brain-model.webp" alt="Sculpted brain divided into four pastel regions" fetchpriority="high">
+            <div class="brain-regions">
+              <button class="hotspot spot-sleep" type="button" data-zone="sleep"><span><svg class="icon" aria-hidden="true"><use href="#moon"/></svg> Sleep <strong>80%</strong></span></button>
+              <button class="hotspot spot-medicine" type="button" data-zone="medicine"><span><svg class="icon" aria-hidden="true"><use href="#medical"/></svg> <b lang="fr">Médecine</b> <strong>15%</strong></span></button>
+              <button class="hotspot spot-food" type="button" data-zone="food"><span><svg class="icon" aria-hidden="true"><use href="#food"/></svg> Food <strong>4%</strong></span></button>
+              <a class="hotspot spot-other" href="#more"><span><svg class="icon" aria-hidden="true"><use href="#arrow"/></svg> Show More <strong>1%</strong></span></a>
+            </div>
+          </div>
+          <button class="moon-button" type="button" aria-label="Moon, tap three times for Ultra Sleep Mode" aria-describedby="moon-hint" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#moon"/></svg></button>
+          <span class="zzz" aria-hidden="true">z z Z</span>
+        </div>
+        <div class="specimen-foot"><span lang="fr">Touche une zone</span><span id="moon-hint" lang="fr">Trois taps sur la lune…</span></div>
+        <p id="moon-status" class="sr-only" role="status"></p>
+      </figure>
+
+      <section class="opening" aria-labelledby="main-title">
+        <h1 id="main-title">Inside Imane’s Brain</h1>
+        <p class="intro"><span lang="fr">Une enquête très sérieuse sur une étudiante en médecine.</span> Spoiler: she’d rather be napping.</p>
+        <a class="button primary explore" href="#brain-map"><span lang="fr">Explorer le cerveau</span> <svg class="icon" aria-hidden="true"><use href="#arrow"/></svg></a>
+        <p class="disclaimer"><span lang="fr">100 % science fictive.</span> 200% accurate vibes.</p>
+      </section>
+    </div>
+
+    <section class="map section" id="brain-map" aria-labelledby="map-title" tabindex="-1">
+      <div class="section-heading">
+        <h2 id="map-title" lang="fr">La carte du cerveau</h2>
+        <p>How Imane’s attention is allocated.</p>
+      </div>
+      <div class="distribution" role="img" aria-label="Sleep 80%, Medicine 15%, Food 4%, Show More 1%"><span></span><span></span><span></span><span></span></div>
+      <ul class="zones">
+        <li><button type="button" class="zone zone-sleep" data-zone="sleep"><svg class="icon" aria-hidden="true"><use href="#moon"/></svg><span class="percent">80%</span><span>Sleep</span><svg class="icon zone-arrow" aria-hidden="true"><use href="#arrow"/></svg></button></li>
+        <li><button type="button" class="zone zone-medicine" data-zone="medicine"><svg class="icon" aria-hidden="true"><use href="#medical"/></svg><span class="percent">15%</span><span lang="fr">Médecine</span><svg class="icon zone-arrow" aria-hidden="true"><use href="#arrow"/></svg></button></li>
+        <li><button type="button" class="zone zone-food" data-zone="food"><svg class="icon" aria-hidden="true"><use href="#food"/></svg><span class="percent">4%</span><span>Food</span><svg class="icon zone-arrow" aria-hidden="true"><use href="#arrow"/></svg></button></li>
+        <li><a class="zone zone-other" href="#more"><svg class="icon" aria-hidden="true"><use href="#spark"/></svg><span class="percent">1%</span><span>Show More</span><svg class="icon zone-arrow" aria-hidden="true"><use href="#arrow"/></svg></a></li>
+      </ul>
+    </section>
+
+    <div class="lab-grid section" id="more" tabindex="-1">
+      <section class="report" aria-labelledby="report-title">
+        <h2 id="report-title" lang="fr">Rapport scientifique</h2>
+        <dl>
+          <div><dt>Sleep dominance</dt><dd>99.7%</dd><span class="metric-meter" style="--fill: .997" aria-hidden="true"></span></div>
+          <div><dt lang="fr">Résistance au réveil</dt><dd>Legendary</dd></div>
+          <div><dt>Study mode</dt><dd lang="fr">Étonnamment efficace</dd></div>
+          <div><dt lang="fr">Probabilité de « 5 minutes de plus »</dt><dd>100%</dd><span class="metric-meter" style="--fill: 1" aria-hidden="true"></span></div>
+          <div><dt>Snack interruption risk</dt><dd lang="fr">De modéré à délicieux</dd></div>
+        </dl>
+        <p>Peer-reviewed by exactly zero scientists.</p>
+      </section>
+
+      <section class="scan-panel" aria-labelledby="scan-title">
+        <svg class="scan-emblem icon" aria-hidden="true"><use href="#medical"/></svg>
+        <h2 id="scan-title">The brain scanner</h2>
+        <p lang="fr">Calibré pour la médecine, les snacks et les siestes qui durent un peu trop.</p>
+        <button type="button" class="button light" id="run-scan" aria-haspopup="dialog"><svg class="icon" aria-hidden="true"><use href="#medical"/></svg> Run Brain Scan</button>
+      </section>
+    </div>
+
+    <section class="game section" aria-labelledby="game-title" lang="fr">
+      <div class="game-art">
+        <svg class="game-brain" viewBox="0 0 400 280" aria-hidden="true"><use href="#brain"/></svg>
+        <button type="button" class="pillow-button" aria-label="Découvrir le secret de l’oreiller" aria-describedby="pillow-hint" aria-controls="pillow-secret" aria-expanded="false"><svg viewBox="0 0 120 83" aria-hidden="true"><use href="#pillow"/></svg></button>
+        <p id="pillow-hint" lang="fr">Touche l’oreiller pour découvrir son secret.</p>
+      </div>
+      <div class="game-content">
+        <h2 id="game-title">Réveil d’Imane</h2>
+        <p lang="fr">Trois tentatives pour réveiller une championne de la sieste.</p>
+        <div class="attempts" aria-hidden="true"><span></span><span></span><span></span></div>
+        <p class="game-status" role="status" aria-atomic="true">0/3 · Imane dort. Chut…</p>
+        <button type="button" class="button primary" id="game-action" lang="fr">Réveiller Imane</button>
+        <p class="pillow-secret" id="pillow-secret" role="status" hidden>Succès débloqué <strong lang="en">Imane, CEO of Naps</strong></p>
+      </div>
+    </section>
+
+    <section class="arena arena-invite section" id="module-battle" aria-labelledby="battle-title" lang="fr">
+      <div class="arena-heading">
+        <h2 id="battle-title" lang="en">Imane vs. the Modules</h2>
+        <p>Six modules de FMPC. Ils ont des questions. Imane a les réponses.</p>
+      </div>
+      <a class="button light" href="modules.html">Entrer dans l’arène <span aria-hidden="true">→</span></a>
+    </section>
+  </main>
+
+  <footer class="wrap footer"><span>Imane Research Institute</span><a href="#top" lang="fr">Retour en haut ↑</a></footer>
+
+  <dialog class="sheet" id="zone-dialog" aria-labelledby="zone-title">
+    <button type="button" class="close-button" data-close aria-label="Close brain zone" autofocus>×</button>
+    <div class="zone-emblem"><svg class="icon" aria-hidden="true"><use id="zone-icon" href="#moon"/></svg></div>
+    <p id="zone-share" class="file-label"></p>
+    <h2 id="zone-title"></h2>
+    <p id="zone-summary"></p>
+    <p id="zone-description"></p>
+    <p id="zone-fact" class="note"></p>
+    <section class="module-card" id="medicine-modules" aria-labelledby="module-title" hidden>
+      <h3 id="module-title" lang="fr">FMPC · 2e année, 1er semestre (S3)</h3>
+      <ul lang="fr">
+        <li>Anatomie 3</li>
+        <li>Physiologie II</li>
+        <li>Biochimie clinique</li>
+        <li>Sémiologie médicale</li>
+        <li>Secourisme et fonctions vitales</li>
+        <li>Histoire de la médecine</li>
+      </ul>
+      <a class="module-source" href="https://www.fmpc.ac.ma/medecine-planning-des-cours-semestre-1-2026-2027/" target="_blank" rel="noopener noreferrer">FMPC’s 2026–27 timetable <span aria-hidden="true">↗</span></a>
+      <a class="module-source" id="battle-link" href="modules.html"><span lang="fr">Affronter les modules</span> <span aria-hidden="true">→</span></a>
+    </section>
+    <button type="button" class="button primary sheet-action" data-close lang="fr">Retour au cerveau</button>
+  </dialog>
+
+  <dialog class="sheet" id="scan-dialog" aria-labelledby="scan-dialog-title">
+    <button type="button" class="close-button" data-close aria-label="Close brain scan" autofocus>×</button>
+    <h2 id="scan-dialog-title" lang="fr">Scan du cerveau d’Imane</h2>
+    <div class="scanner-art" aria-hidden="true"><svg viewBox="0 0 400 280"><use href="#brain"/></svg><div class="beam"></div></div>
+    <progress id="scan-progress" max="100" value="0" aria-label="Brain scan progress"></progress>
+    <p id="scan-status" role="status" aria-atomic="true"></p>
+    <div class="dialog-actions">
+      <button type="button" class="button primary" id="scan-again" hidden>Scan Again</button>
+      <button type="button" class="button outline" data-close lang="fr">Fermer</button>
+    </div>
+  </dialog>
+
+</body>
+</html>
