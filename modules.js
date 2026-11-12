@@ -109,7 +109,6 @@ const modules = [
   {
     name: "Histoire de la médecine", mark: "H", color: "#d3c1a9",
     intro: "Le dernier boss tient dans un livre. Un très gros livre. Shall we time travel?",
-    win: "Victory! Six modules vaincus. Tu peux enfin fermer tes fiches, Imane.",
     questions: [
       {
         line: "Je t’emmène en 1796. Un médecin teste une nouvelle façon de prévenir la variole.",
@@ -129,6 +128,31 @@ const modules = [
 
 const get = (id) => document.getElementById(id);
 const board = document.querySelector(".battle-board");
+const arenaHeading = get("arena-heading");
+const finale = get("arena-finale");
+const finaleLine = get("finale-line");
+const finaleNext = get("finale-next");
+const finaleReward = get("finale-reward");
+const finaleBeats = [
+  {
+    image: "dr-moo-avatar.webp", alt: "Dr. Moo sourit et salue Imane.", lang: "en",
+    line: "Congratulations, Imane! You’re the greatest doctor in the world."
+  },
+  {
+    image: "dr-moo-kind.webp", alt: "Dr. Moo pose son sabot sur son cœur.", lang: "fr",
+    line: "Tu peux être fière de toi. Tu as pris le temps de réfléchir, et tu as tenu jusqu’au bout."
+  },
+  {
+    image: "dr-moo-wink.webp", alt: "Dr. Moo fait un clin d’œil et lève le sabot.", lang: "en",
+    line: "Your curiosity and kindness will make people feel heard. Keep bringing both with you, even on the sleepy days."
+  },
+  {
+    image: "dr-moo-star.webp", alt: "Dr. Moo tend une étoile dorée à Imane.", lang: "fr",
+    line: "Cette étoile est pour toi. Et tu peux m’emporter avec toi en avatar. Bravo, Imane !"
+  }
+];
+let finalePortraits;
+let finaleIndex = 0;
 const speech = get("speech-text");
 const questionText = get("speech-question");
 const source = get("fact-source");
@@ -175,10 +199,11 @@ function render() {
     source.href = question.source[1];
     if (lives === 0) next.textContent = "Retenter le duel";
     else if (phase === "wrong") next.textContent = "Réessayer la question";
-    else next.textContent = cleared ? "Voir la réaction" : "Question suivante";
+    else if (cleared) next.textContent = lastModule ? "Découvrir ma récompense" : "Voir la réaction";
+    else next.textContent = "Question suivante";
   } else if (phase === "victory") {
     speech.textContent = module.win;
-    next.textContent = lastModule ? "Rejouer depuis le début" : "Module suivant";
+    next.textContent = "Module suivant";
   } else {
     speech.textContent = module.intro;
     next.textContent = "Ready, boss.";
@@ -186,12 +211,18 @@ function render() {
 }
 
 next.addEventListener("click", () => {
+  if (phase === "finale") return;
   if (phase === "victory") {
-    moduleIndex = (moduleIndex + 1) % modules.length;
+    moduleIndex += 1;
     resetDuel();
+    if (moduleIndex === modules.length - 1) prepareFinalePortraits();
   } else if (lives === 0) {
     resetDuel();
   } else if (phase === "correct" && correctAnswers === modules[moduleIndex].questions.length) {
+    if (moduleIndex === modules.length - 1) {
+      openFinale();
+      return;
+    }
     phase = "victory";
   } else {
     if (phase === "correct") questionIndex += 1;
@@ -207,6 +238,55 @@ function resetDuel() {
   correctAnswers = 0;
   phase = "intro";
 }
+
+function prepareFinalePortraits() {
+  if (finalePortraits) return;
+  finalePortraits = finaleBeats.map((beat) => {
+    const image = new Image(768, 768);
+    image.alt = beat.alt;
+    image.src = "assets/" + beat.image;
+    return image;
+  });
+}
+
+function renderFinaleBeat() {
+  const beat = finaleBeats[finaleIndex];
+  const lastBeat = finaleIndex === finaleBeats.length - 1;
+  finale.dataset.beat = String(finaleIndex);
+  get("finale-portrait").replaceChildren(finalePortraits[finaleIndex]);
+  finaleLine.lang = beat.lang;
+  finaleLine.textContent = beat.line;
+  finaleNext.hidden = lastBeat;
+  finaleReward.hidden = !lastBeat;
+}
+
+function openFinale() {
+  prepareFinalePortraits();
+  phase = "finale";
+  finaleIndex = 0;
+  board.hidden = true;
+  arenaHeading.hidden = true;
+  finale.hidden = false;
+  renderFinaleBeat();
+  get("finale-title").focus();
+}
+
+finaleNext.addEventListener("click", () => {
+  if (phase !== "finale" || finaleIndex === finaleBeats.length - 1) return;
+  finaleIndex += 1;
+  renderFinaleBeat();
+  finaleLine.focus();
+});
+
+get("finale-replay").addEventListener("click", () => {
+  finale.hidden = true;
+  arenaHeading.hidden = false;
+  board.hidden = false;
+  moduleIndex = 0;
+  resetDuel();
+  render();
+  speech.focus();
+});
 
 for (const button of answerButtons) {
   button.addEventListener("click", () => {

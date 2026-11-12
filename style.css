@@ -340,6 +340,105 @@ a { color: inherit; }
 .answer > span { display: grid; place-items: center; width: 1.6rem; height: 1.6rem; border-radius: .35rem; background: #e6c8f8; color: #51276d; font-size: .8rem; font-weight: 800; }
 .battle-page :focus-visible { outline-color: #ffda9b; }
 .speech :focus-visible { outline-color: #834cc5; }
+.finale {
+  display: grid;
+  gap: clamp(.85rem, 3vw, 1.75rem);
+  align-items: center;
+  padding: clamp(.95rem, 4vw, 2.5rem);
+  border: 1px solid #c998d672;
+  border-radius: 1.6rem;
+  background: radial-gradient(ellipse at 22% 5%, #674480, transparent 70%), #2b1738;
+  box-shadow: 0 18px 50px #14071a50;
+  animation: finale-reveal .45s ease-out both;
+}
+.finale-stage {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  place-items: center;
+  min-height: clamp(12rem, 52vw, 20rem);
+  overflow: hidden;
+  border: 1px solid #e7b9f04a;
+  border-radius: 1.2rem;
+  background:
+    radial-gradient(ellipse at 50% 94%, #ffd49b4a, transparent 49%),
+    radial-gradient(ellipse at 49% 48%, #bb87e288, transparent 73%),
+    #301941;
+}
+.finale-orbit {
+  position: absolute;
+  inset: 12% 10%;
+  z-index: -1;
+  border: 1px solid #ffe0b36b;
+  border-radius: 50%;
+  color: #ffe0b3;
+  transform: rotate(-15deg);
+}
+.finale-orbit span { position: absolute; font-size: 1.3rem; line-height: 1; }
+.finale-orbit span:nth-child(1) { top: 7%; left: 14%; }
+.finale-orbit span:nth-child(2) { top: 15%; right: 7%; font-size: .8rem; }
+.finale-orbit span:nth-child(3) { bottom: 13%; right: 6%; }
+.finale-orbit span:nth-child(4) { bottom: 12%; left: 10%; }
+.finale-orbit span:nth-child(5) { top: 0; left: 54%; font-size: .65rem; }
+.finale-portrait {
+  width: clamp(10rem, 49vw, 18rem);
+  aspect-ratio: 1;
+  filter: drop-shadow(0 .6rem .9rem #1f092a80);
+}
+.finale-portrait img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform-origin: center 82%;
+  animation: cow-greet .55s ease-out both;
+}
+.finale[data-beat="1"] .finale-portrait img { animation-name: cow-bow; }
+.finale[data-beat="2"] .finale-portrait img { animation-name: cow-cheer; }
+.finale[data-beat="3"] .finale-portrait img { animation-name: cow-gift; }
+.finale[data-beat="3"] .finale-orbit span { animation: reward-sparkle .9s ease-out both; }
+.finale-score { color: #ffe0b3; font-size: .85rem; font-weight: 800; }
+.finale h2 { margin: .28rem 0 .8rem; font-size: clamp(2.05rem, 7vw, 3.45rem); }
+.finale-speech {
+  position: relative;
+  padding: .85rem 1rem;
+  border: 1px solid #e7c9f0;
+  border-radius: .9rem;
+  background: #fff5ff;
+  color: #341f41;
+}
+.finale-speaker { margin-bottom: .24rem; color: #6b3c89; font-size: .82rem; font-weight: 800; }
+#finale-line { font-size: clamp(.94rem, 2.65vw, 1.08rem); line-height: 1.5; }
+.finale-speech :focus-visible { outline-color: #834cc5; }
+.finale-controls { margin-top: .85rem; }
+.finale-reward { display: flex; flex-wrap: wrap; gap: .5rem; }
+.finale-replay { color: #f7e8ff; border-color: #bf9cd3; background: #502d65; }
+@media (min-width: 45rem) {
+  .finale { grid-template-columns: minmax(0, .95fr) minmax(0, 1fr); }
+}
+@media (max-width: 44.999rem) {
+  .finale-controls .button { width: 100%; }
+}
+@keyframes finale-reveal { from { opacity: 0; transform: translateY(10px); } }
+@keyframes cow-greet {
+  from { opacity: .5; transform: translateY(12px) rotate(-5deg) scale(.94); }
+  65% { transform: translateY(-4px) rotate(2deg); }
+}
+@keyframes cow-bow {
+  from { opacity: .6; transform: rotate(-4deg); }
+  55% { transform: translateY(4px) rotate(2deg); }
+}
+@keyframes cow-cheer {
+  from { opacity: .65; transform: translateY(6px) rotate(4deg); }
+  55% { transform: translateY(-9px) rotate(-3deg) scale(1.035); }
+}
+@keyframes cow-gift {
+  from { opacity: .65; transform: translateY(7px) scale(.94); }
+  65% { transform: translateY(-4px) scale(1.04); }
+}
+@keyframes reward-sparkle {
+  from { opacity: .4; transform: scale(.65); }
+  55% { opacity: 1; transform: scale(1.35); }
+}
 .footer { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .25rem .75rem; padding-block: .8rem 1rem; color: var(--muted); font-size: .75rem; }
 .footer a { display: inline-grid; place-items: center; min-height: 44px; text-underline-offset: .2em; }
 

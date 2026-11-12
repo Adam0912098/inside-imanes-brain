@@ -15,7 +15,7 @@
   </header>
 
   <main class="wrap battle-main">
-    <div class="arena-heading">
+    <div class="arena-heading" id="arena-heading">
       <h1 lang="en">Imane vs. the Modules</h1>
       <p>Deux bonnes réponses pour battre chaque module. Deux erreurs, et le duel recommence.</p>
     </div>
@@ -52,6 +52,30 @@
           <button type="button" class="answer" data-choice="2"><span aria-hidden="true">C</span><strong></strong></button>
         </div>
         <button type="button" class="button light" id="battle-next">Ready, boss.</button>
+      </div>
+    </section>
+
+    <section class="finale" id="arena-finale" aria-labelledby="finale-title" hidden>
+      <div class="finale-stage">
+        <div class="finale-orbit" aria-hidden="true">
+          <span>✦</span><span>✧</span><span>✦</span><span>✧</span><span>✦</span>
+        </div>
+        <div class="finale-portrait" id="finale-portrait"></div>
+      </div>
+      <div class="finale-content">
+        <p class="finale-score">6/6 modules vaincus</p>
+        <h2 id="finale-title" tabindex="-1">Félicitations, Imane&nbsp;!</h2>
+        <div class="finale-speech">
+          <p class="finale-speaker" lang="en">Dr. Moo</p>
+          <p id="finale-line" tabindex="-1"></p>
+        </div>
+        <div class="finale-controls">
+          <button type="button" class="button light" id="finale-next">Continuer <span aria-hidden="true">→</span></button>
+          <div class="finale-reward" id="finale-reward" hidden>
+            <a class="button light" href="assets/dr-moo-avatar.webp" download="Dr-Moo-avatar.webp">Télécharger mon avatar</a>
+            <button type="button" class="button finale-replay" id="finale-replay">Rejouer l’arène</button>
+          </div>
+        </div>
       </div>
     </section>
   </main>
