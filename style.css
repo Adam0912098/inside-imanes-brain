@@ -342,6 +342,33 @@ a { color: inherit; }
 .speech :focus-visible { outline-color: #834cc5; }
 .footer { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .25rem .75rem; padding-block: .8rem 1rem; color: var(--muted); font-size: .75rem; }
 .footer a { display: inline-grid; place-items: center; min-height: 44px; text-underline-offset: .2em; }
+.footer [data-visit-settings] {
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  text-decoration: underline;
+  text-underline-offset: .2em;
+}
+.battle-page .footer { color: #ebd8f4; }
+.visit-preference {
+  position: fixed;
+  z-index: 1;
+  right: max(.75rem, env(safe-area-inset-right));
+  bottom: max(.75rem, env(safe-area-inset-bottom));
+  width: min(24rem, calc(100% - 1.5rem - env(safe-area-inset-left) - env(safe-area-inset-right)));
+  max-height: 70dvh;
+  overflow: auto;
+  padding: .9rem 1rem 1rem;
+  border: 1px solid #d9c3e9;
+  border-radius: 1rem;
+  background: #fff9ff;
+  color: var(--ink);
+  box-shadow: 0 8px 28px #2e193b36;
+}
+.visit-preference h2 { font: 800 1rem/1.3 var(--ui); }
+.visit-preference p { margin-block: .35rem .7rem; color: var(--muted); font-size: .84rem; }
+.visit-options { display: flex; flex-wrap: wrap; gap: .5rem; }
 
 .sheet {
   --sheet-margin: 1rem;
