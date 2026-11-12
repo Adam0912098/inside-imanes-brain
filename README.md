@@ -17,7 +17,3 @@ Double-click `index.html` to open it in a current browser. Use **Entrer dans l�
 For offline sharing, zip the two HTML files, stylesheet, two scripts, and `assets` folder together. Imane can extract them into one folder and open `index.html` in a desktop browser.
 
 For a phone-friendly link, put the same files and `assets` folder at the root of a GitHub repository. Under **Settings → Pages**, choose **Deploy from a branch**, then select the branch with the files and **/(root)**. Once the site is live, send Imane its Pages URL. [GitHub Pages instructions](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site)
-
-## Vercel hosting and traffic
-
-Import the GitHub repository in Vercel with the **Other** framework preset. The two pages are served directly from the repository root. In the Vercel project, open **Firewall → Traffic → Client IP Addresses** to see requests grouped by source IP. Use **Request Paths** to focus on page requests such as `/` and `/modules.html`. [Vercel Firewall documentation](https://vercel.com/docs/vercel-firewall/firewall-observability)
